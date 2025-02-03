@@ -16,12 +16,13 @@ const Thanks = () => {
 <div className="vh-100 d-flex flex-column">
       {/* Navbar */}
       <nav className="navbar navbar-dark bg-dark">
-        <div className="container">
-          <a className="navbar-brand ms-3" href="/">
-            <img src={logo} alt="Logo" height="30" />
-          </a>
-        </div>
-      </nav>
+ 
+ <div className="containe">
+   <a className="navbar-brand ms-3" href="/">
+     <img src={logo} alt="Logo" height="30" />
+   </a>
+ </div>
+</nav>
 
       {/* Thank You Card */}
       <div className="container d-flex justify-content-center align-items-center flex-grow-1">

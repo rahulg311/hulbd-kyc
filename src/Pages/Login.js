@@ -28,15 +28,14 @@ const LoginPage = ({ setToken }) => {
     try {
       const res = await axios.post(optpath, data);
 
-      if (
-        res?.data?.CheckMobileNoAndSendOTP?.[0]?.Messages ===
-        "OTP sent successfully"
-      ) {
+      if (res?.data?.CheckMobileNoAndSendOTP?.[0]?.Messages ==="OTP sent successfully") {
         toast.success("OTP sent successfully");
         console.log("OTP:", res.data.CheckMobileNoAndSendOTP[0].OTP); // Log OTP for testing (remove in production)
         setShowOtp(true); // Show OTP input field
       } else {
-        alert("Failed to send OTP. Please try again.");
+        toast.error(res?.data?.CheckMobileNoAndSendOTP?.[0]?.Messages);
+        console.log("error",res?.data?.CheckMobileNoAndSendOTP?.[0]?.Messages)
+        // alert("Failed to send OTP. Please try again.");
       }
     } catch (error) {
       console.error("Error sending OTP:", error);
